@@ -11,14 +11,9 @@
 |
 */
 
-Route::get('contato', function () {
-    return view('contato');
-});
+Route::get('contato', 'PaginasController@getContato');
 
-Route::get('sobre', function () {
-    return view('sobre');
-});
+Route::get('sobre', 'PaginasController@getSobre');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'PaginasController@getIndex');
