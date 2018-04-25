@@ -161,9 +161,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        // Pug
 
-        Bkwld\LaravelPug\ServiceProvider::class,
 
     ],
 

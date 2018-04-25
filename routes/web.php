@@ -13,7 +13,7 @@
 
 Route::get('contato', 'PaginasController@getContato');
 
-Route::get('sobre', 'PaginasController@getSobre');
+Route::get('teste', 'PaginasController@getTeste');
 
 
 Route::get('/', 'PaginasController@getIndex');
