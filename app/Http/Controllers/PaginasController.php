@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 class PaginasController extends Controller {
 
   public function getIndex() {
-    return view('paginas.welcome');
+    return view('paginas.home');
   }
 
   public function getConteudo() {
