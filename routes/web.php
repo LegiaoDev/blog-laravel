@@ -10,10 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('empresa', 'PaginasController@getEmpresa');
 Route::get('contato', 'PaginasController@getContato');
 
-Route::get('teste', 'PaginasController@getTeste');
+Route::get('conteudo', 'PaginasController@getConteudo');
 
 
 Route::get('/', 'PaginasController@getIndex');

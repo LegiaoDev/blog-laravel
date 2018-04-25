@@ -8,7 +8,7 @@ class PaginasController extends Controller {
     return view('paginas.welcome');
   }
 
-  public function getTeste() {
+  public function getConteudo() {
 
     $nome = 'Gabriel';
     $sobrenome = 'Antonio';
@@ -22,7 +22,7 @@ class PaginasController extends Controller {
     //
     // );
     // Uma maneira de inserir informações no View
-    return view('paginas.teste')->withNomeCompleto($nomeCompleto)->withEmail($email);
+    return view('paginas.conteudo')->withNomeCompleto($nomeCompleto)->withEmail($email);
 
     // Passando informações de um array para o view
     // return view('paginas.sobre')->withDados($dados);
@@ -30,6 +30,10 @@ class PaginasController extends Controller {
 
   public function getContato() {
     return view('paginas.contato');
+  }
+
+  public function getEmpresa() {
+    return view('paginas.empresa');
   }
 
 
