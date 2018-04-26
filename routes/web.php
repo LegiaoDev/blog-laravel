@@ -12,8 +12,6 @@
 */
 Route::get('empresa', 'PaginasController@getEmpresa');
 Route::get('contato', 'PaginasController@getContato');
-
 Route::get('conteudo', 'PaginasController@getConteudo');
-
-
 Route::get('/', 'PaginasController@getIndex');
+Route::resource('posts', 'PostController');
