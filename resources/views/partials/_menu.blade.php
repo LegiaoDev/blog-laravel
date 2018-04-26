@@ -19,6 +19,9 @@
   <li class="nav-item">
     <a class="nav-link" href="/conteudo">Conteúdo</a>
   </li>
+  <li class="nav-item">
+    <a href="/posts/create" class="nav-link">Blog</a>
+  </li>
 
 </ul>
 <ul class="navbar-nav ml-auto">
