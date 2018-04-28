@@ -32,10 +32,10 @@
               <tr>
                 <th>{{ $post->id }}</th>
                 <td>{{ $post->title }}</td>
-                <td>{{ $post->texto }}</td>
-                <td>{{ $post->created_at }}</td>
+                <td>{{ substr($post->texto, 0, 50) }}{{ strlen($post->texto) > 50 ? "..." : "" }}</td>
+                <td>{{ date('F m, Y',  strtotime($post->created_at)) }}</td>
                 <td>
-                  <a href="#" class="btn btn-block btn-secondary">Ver</a>
+                  <a href="{{ route('posts.show', $post->id) }}" class="btn btn-block btn-secondary">Ver</a>
                   <a href="#" class="btn btn-block btn-primary">Editar</a>
                   <a href="#" class="btn btn-block btn-danger">Excluir</a>
                 </td>
