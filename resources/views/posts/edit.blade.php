@@ -1,18 +1,19 @@
 @extends('main')
 
-@section('title', ' | View Post')
+@section('title', ' | Editar Post')
 
 
 @section('conteudo')
 
 <div class="row">
 
-    <div class="col-md-8">
-      <h1>{{ $post->title }}</h1>
-
-  <p class="lead">{{ $post->texto }}</p>
+  <div class="col-md-8">
+    <h1>Atualização do post: <strong>{{ $post->title }}</strong></h1>
+		{!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT']) !!}
+      {{ Form::text('title', null, ['class' => 'form-control']) }}
+      {{ Form::textarea('texto', null, ['class' => 'form-control']) }}
   <hr>
-  <a href="{!! route('posts.index') !!}" class="btn btn-sm btn-primary">Ver Posts</a>
+
   </div>
   <div class="col-md-4">
     <div class="jumbotron well">
@@ -27,12 +28,14 @@
       <hr>
       <div class="row">
         <div class="col-sm-6">
-          {!! Html::linkRoute('posts.edit', 'Editar', array($post->id), array('class' => 'btn btn-primary btn-block')) !!}
+          {{ Form::submit('Save Changes', ['class' => 'btn btn-success btn-block']) }}
         </div>
         <div class="col-sm-6">
-          {!! Html::linkRoute('posts.edit', 'Deletar', array($post->id), array('class' => 'btn btn-primary btn-block')) !!}
+
+          {!! Html::linkRoute('posts.edit', 'Cancelar', array($post->id), array('class' => 'btn btn-sm btn-danger btn-block')) !!}
         </div>
       </div>
+      {!! Form::close() !!}
 
     </div>
   </div>

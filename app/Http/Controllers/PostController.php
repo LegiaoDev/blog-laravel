@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use Session;
+
 class PostController extends Controller
 {
     /**
@@ -73,7 +74,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.edit')->withPost($post);
     }
 
     /**
@@ -85,7 +87,24 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      // Validate the data
+        $this->validate($request, array(
+                'title' => 'required|max:255',
+                'texto'  => 'required'
+            ));
+        // Save the data to the database
+        $post = Post::find($id);
+
+        $post->title = $request->input('title');
+        $post->texto = $request->input('texto');
+
+        $post->save();
+
+        // set flash data with success message
+        Session::flash('success', 'Post atualizado com sucesso');
+
+        // redirect with flash data to posts.show
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**

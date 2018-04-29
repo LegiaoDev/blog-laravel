@@ -36,8 +36,7 @@
                 <td>{{ date('F m, Y',  strtotime($post->created_at)) }}</td>
                 <td>
                   <a href="{{ route('posts.show', $post->id) }}" class="btn btn-block btn-secondary">Ver</a>
-                  <a href="#" class="btn btn-block btn-primary">Editar</a>
-                  <a href="#" class="btn btn-block btn-danger">Excluir</a>
+                  <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-block btn-primary">Editar</a>
                 </td>
               </tr>
 
